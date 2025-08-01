@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>paulynz</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    html, body {
+  overflow-x: hidden; 
+}
+.tab-section {
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 120px;
+  z-index: 0;
+  padding: 40px;
+  max-width: 800px;
+  margin: auto;
+  background-color: #FFFAE6;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.tab-section.active {
+  opacity: 1;
+  pointer-events: auto;
+  position: relative;
+  z-index: 1;
+}
+
+nav a {
+  background-color: #fff3cc;
+  padding: 8px 12px;
+  border-radius: 10px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav a:hover {
+  background-color: #ffe299;
+  color: #d48806;
+}
+
+.gallery img {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.07);
+  box-shadow: 0 6px 15px rgba(255, 183, 77, 0.4);
+}
+
+.profile-pic {
+  box-shadow: 0 6px 20px rgba(255, 183, 77, 0.3);
+  border: 6px double #FFD580;
+}
+
+.logo {
+  text-shadow: 1px 1px 2px #ffe9c1;
+  letter-spacing: 1px;
+  font-weight: bold;
+  animation: floatLogo 4s ease-in-out infinite;
+}
+
+@keyframes floatLogo {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+
+h2::after {
+  display: block;
+  font-size: 24px;
+  margin-top: 10px;
+  color: #FFD580;
+}
+
+    body {
+      margin: 0;
+      font-family: 'Quicksand', sans-serif;
+      background-color: #FFF8DC;
+      color: #333;
+    }
+
+    header {
+      width: 100%;
+      padding: 20px 40px;
+      background-color: #FFF3B0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .quote-text {
+  font-family: 'Great Vibes', cursive;
+  font-size: 24px;
+  color: #d4a017;
+  margin-top: 10px;
+}
+
+    .logo {
+      font-family: 'Pacifico', cursive;
+      font-size: 28px;
+      color: #FFB347;
+    }
+
+    .gallery-container {
+  text-align: center;
+}
+
+.gallery-intro {
+  font-style: italic;
+  font-size: 18px;
+  margin-bottom: 30px;
+  color: #b68b00;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 20px 0;
+  justify-items: center;
+}
+
+.gallery img {width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border: 4px solid #FFE5B4;
+  transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+}
+.carousel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gallery-slides {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+  max-width: 800px;
+}
+
+.gallery-slide {
+  display: none;
+  flex-shrink: 0;
+  width: 100%;
+  justify-content: center;
+  gap: 20px;
+}
+
+.gallery-slide.active {
+  display: flex;
+  animation: fade 0.5s ease-in-out;
+}
+
+@keyframes fade {
+  from { opacity: 0.6; }
+  to { opacity: 1; }
+}
+
+.arrow {
+  background: none;
+  border: none;
+  font-size: 30px;
+  color: #FFB347;
+  cursor: pointer;
+  padding: 10px;
+  transition: color 0.3s ease;
+}
+
+.arrow:hover {
+  color: #ff8c00;
+}
+
+.back-buttons {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.back-buttons button {
+  background-color: #FFE5B4;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 15px;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: bold;
+  color: #b68b00;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.back-buttons button:hover {
+  background-color: #FFD580;
+}
+    nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: #555;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    nav a:hover {
+      color: #FFB347;
+    }
+
+    .tab-section {
+      display: none;
+      padding: 40px;
+      max-width: 800px;
+      margin: auto;
+      background-color: #FFFAE6;
+      border-radius: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .tab-section.active {
+      display: block;
+    }
+
+.center-tab-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.center-tab-content ul {
+  padding: 0;
+  margin: 0;
+}
+.center-tab-content li {
+  list-style: none;
+  margin: 5px 0;
+}
+
+    .profile-pic {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid #FFD580;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      color: #FFAE42;
+    }
+
+  footer {
+  text-align: center;
+  padding: 20px 0;
+  font-size: 14px;
+  color: #b68b00;
+}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">AboutMe</div>
+    <nav>
+      <a onclick="showTab('home')">Home</a>
+      <a onclick="showTab('contact')">Contact</a>
+      <a onclick="showTab('gallery')">Gallery</a>
+      <a onclick="showTab('funfact')">Hobbies</a>
+    </nav>
+  </header>
+
+<div id="tab-container" style="position: relative; min-height: 100vh; padding-bottom: 100px;">
+
+  <section id="home" class="tab-section active">
+    <div style="text-align:center">
+      <img src="I2.jpg" alt="Pau's Photo" class="profile-pic">
+      <h2>Hey, there! I'm Pau!</h2>
+      <p>📍Quezon City, Philippines</p>
+      <p>Hello! I am <strong>Paulyn O. Bongay</strong>, a 20 year old nursing student from Our Lady of Fatima University Quezon – City Campus.</p>
+    </div>
+  </section>
+
+  <section id="contact" class="tab-section">
+    <div style="text-align:center">
+  <h2>Contact Me</h2>
+  <p>You can contact me or send me a message through these platforms:</p>
+  <p><i class="fas fa-phone"></i> 09384180623</p>
+  <p><i class="fas fa-envelope"></i> 
+    <a href="mailto:https://mail.google.com/mail/u/1/#inbox" style="color: #333;">bongaypaulyn06@gmail.com</a></p>
+  <p><i class="fas fa-envelope"></i> 
+    <a href="mailto:https://mail.google.com/mail/u/0/#inbox" style="color: #333;">pobongay2317qc@student.fatima.edu.ph</a></p>
+  </section>
+
+  <section id="gallery" class="tab-section">
+  <div class="gallery-container">
+    <h2>Gallery</h2>
+    <p class="gallery-intro">A glimpse into the sunshine-filled moments of my life.</p>
+    <div class="gallery" id="gallery-thumbnails">
+      <img src="I3.jpg" alt="Photobooth 1" onclick="openViewer(0)">
+      <img src="I5.jpg" alt="Photobooth 3" onclick="openViewer(1)">
+      <img src="I4.jpg" alt="Photobooth 2" onclick="openViewer(2)">
+      <img src="I6.jpg" alt="Photobooth 4" onclick="openViewer(3)">
+      <img src="I1.jpg" alt="Photobooth 5" onclick="openViewer(4)">
+    </div>
+
+    <div id="gallery-viewer" style="display:none; text-align:center; margin-top:20px;">
+  <img id="viewer-image" src="" style="max-width:80%; max-height:500px; border-radius:20px;">
+</div>
+  </div>
+</section>
+
+<section id="funfact" class="tab-section">
+  <div class="center-tab-content">
+    <h2>Little Things About Me</h2>
+    <p style="font-style: italic; color: #b68b00; max-width: 600px; margin-bottom: 30px;">
+
+    <div style="background-color: #FFF9E6; padding: 30px; border-radius: 20px; box-shadow: 0 4px 10px rgba(255, 197, 113, 0.2); text-align: left; max-width: 700px;">
+      <p><strong>Photography</strong> Photography is more than just capturing images-it's my way of seeing the world through a creative lens, and stories that might otherwise go unnoticed</p>
+      
+      <p><strong>Dancing</strong> It allows me to connect with music, release stress, and express my personality in a creative and joyful way.</p>
+      
+      <p><strong>Watching Kdrama</strong> Watching Kdrama is not just entertainment for me-it's a way to explore different cultures, emotions, and storytelling styles.</p>
+      
+      </p><strong>Playing volleyball</strong>, Playing badminton is a fun and energizing way for me to stay active, improve my focus, and build teamwork.</p>
+      
+      <p>🌼 <strong>Reading books</strong> It fluels my imagination, expands my knowledge, and offers a peaceful escape into different worlds.</p>
+    </div>
+</section>
+    </p>
+  </div> <!-- end of text block -->
+
+  </div> <!-- end of flex container -->
+</section>
+
+<script>
+  function showTab(tabId) {
+    const tabs = document.querySelectorAll('.tab-section');
+    const newTab = document.getElementById(tabId);
+
+    tabs.forEach(tab => {
+      if (tab.classList.contains('active')) {
+        tab.style.opacity = 0;
+        tab.style.pointerEvents = "none";
+
+        setTimeout(() => {
+          tab.classList.remove('active');
+
+          newTab.classList.add('active');
+          setTimeout(() => {
+            newTab.style.opacity = 1;
+            newTab.style.pointerEvents = "auto";
+          }, 50);
+        }, 300); 
+      }
+    });
+  }
+</script>
+
+  <script>
+  const imageSources = [
+    "I3.jpg", "I5.jpg", "I4.jpg", "I1.jpg",
+    "I6.jpg"];
+  let currentIndex = 0;
+
+  function openViewer(index) {
+    currentIndex = index;
+    document.getElementById('gallery-thumbnails').style.display = 'none';
+    document.getElementById('gallery-viewer').style.display = 'block';
+    updateViewer();
+  }
+
+  function closeViewer() {
+    document.getElementById('gallery-thumbnails').style.display = 'grid';
+    document.getElementById('gallery-viewer').style.display = 'none';
+  }
+
+  function updateViewer() {
+    const viewerImage = document.getElementById('viewer-image');
+    viewerImage.src = imageSources[currentIndex];
+  }
+
+  function nextImage() {
+    currentIndex = (currentIndex + 1) % imageSources.length;
+    updateViewer();
+  }
+
+  function prevImage() {
+    currentIndex = (currentIndex - 1 + imageSources.length) % imageSources.length;
+    updateViewer();
+  }
+  document.addEventListener('keydown', function(event) {
+  const viewer = document.getElementById('gallery-viewer');
+  if (viewer && viewer.style.display === 'block') {
+    if (event.key === 'ArrowRight') {
+      nextImage();
+    } else if (event.key === 'ArrowLeft') {
+      prevImage();
+    } else if (event.key === 'Escape') {
+      closeViewer();
+    }
+  }
+});
+    function updateViewer() {
+  const viewerImage = document.getElementById('viewer-image');
+  viewerImage.style.opacity = 0;
+  setTimeout(() => {
+    viewerImage.src = imageSources[currentIndex];
+    viewerImage.onload = () => {
+      viewerImage.style.opacity = 1;
+    };
+  }, 100);
+}
+</script>
+
+<audio id="bg-music" loop>
+  <source src="Rains in Heaven.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+<button id="play-music-button">🎵 Play Music</button>
+
+<style>
+  #play-music-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #FFE5B4;
+    color: #b68b00;
+    border: none;
+    border-radius: 25px;
+    padding: 12px 20px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    z-index: 1001;
+  }
+
+  #play-music-button:hover {
+    background-color: #FFD580;
+  }
+</style>
+
+<script>
+  const music = document.getElementById("bg-music");
+  const playBtn = document.getElementById("play-music-button");
+
+  playBtn.addEventListener("click", () => {
+    music.play();
+    playBtn.textContent = "🎶 Playing...";
+    playBtn.disabled = true;
+    playBtn.style.opacity = 0.7;
+  });
+</script>
+</body>
+</html>        
+
+
